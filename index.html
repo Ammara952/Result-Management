@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Upload | Teacher Dashboard</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <div class="bg-dark text-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom py-4 px-3">
+                <i class="fas fa-university me-2 text-primary"></i>
+                <span class="fw-bold">EduManage</span>
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white p-3 border-0 active-nav"
+                    id="nav-dashboard">
+                    <i class="fas fa-th-large me-2"></i> Dashboard
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white p-3 border-0"
+                    id="nav-upload">
+                    <i class="fas fa-file-upload me-2"></i> Upload Results
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white p-3 border-0"
+                    id="nav-students">
+                    <i class="fas fa-user-graduate me-2"></i> Students
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white p-3 border-0"
+                    id="nav-subjects">
+                    <i class="fas fa-book me-2"></i> Subjects
+                </a>
+                <a href="#" class="list-group-item list-group-item-action bg-dark text-white p-3 border-0"
+                    id="nav-settings">
+                    <i class="fas fa-cog me-2"></i> Settings
+                </a>
+            </div>
+            <div class="mt-auto p-3">
+                <div class="alert alert-info border-0 shadow-sm" style="font-size: 0.85rem;">
+                    <i class="fas fa-info-circle me-1"></i> <strong>Note:</strong> Students can only view their results
+                    via the student portal.
+                </div>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom px-4 py-3">
+                <button class="btn btn-outline-secondary btn-sm me-3" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h4 class="mb-0 fw-bold" id="page-title">Dashboard Overview</h4>
+                <div class="ms-auto d-flex align-items-center">
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle"
+                            id="userDropdown" data-bs-toggle="dropdown">
+                            <img src="https://ui-avatars.com/api/?name=Teacher+Admin&background=0D6EFD&color=fff"
+                                alt="User" class="rounded-circle me-2" width="32">
+                            <span class="d-none d-md-inline text-dark fw-medium">Prof. Ahmed</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i> Profile</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>
+                                    Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid p-4">
+                <!-- Dashboard Section -->
+                <div id="section-dashboard" class="content-section">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm custom-card bg-primary text-white">
+                                <div class="card-body p-4">
+                                    <h6 class="text-uppercase small mb-2">Total Students</h6>
+                                    <h2 class="mb-0 fw-bold">1,240</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm custom-card bg-success text-white">
+                                <div class="card-body p-4">
+                                    <h6 class="text-uppercase small mb-2">Passing Rate</h6>
+                                    <h2 class="mb-0 fw-bold">88%</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm custom-card bg-info text-white">
+                                <div class="card-body p-4">
+                                    <h6 class="text-uppercase small mb-2">Total Subjects</h6>
+                                    <h2 class="mb-0 fw-bold">12</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card border-0 shadow-sm custom-card bg-warning text-white">
+                                <div class="card-body p-4">
+                                    <h6 class="text-uppercase small mb-2">Pending Results</h6>
+                                    <h2 class="mb-0 fw-bold">4</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="card border-0 shadow-sm custom-card">
+                                <div class="card-header bg-white py-3">
+                                    <h5 class="mb-0 fw-bold">Academic Performance</h5>
+                                </div>
+                                <div class="card-body text-center py-5">
+                                    <i class="fas fa-chart-line fa-4x text-light mb-3"></i>
+                                    <p class="text-muted">Analytics chart will appear here.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card border-0 shadow-sm custom-card">
+                                <div class="card-header bg-white py-3">
+                                    <h5 class="mb-0 fw-bold">Recent Notifications</h5>
+                                </div>
+                                <div class="card-body list-group list-group-flush p-0">
+                                    <div class="list-group-item border-0 border-bottom">
+                                        <p class="mb-1 small fw-bold">Final Term dates announced</p>
+                                        <span class="text-muted smaller">Today, 10:00 AM</span>
+                                    </div>
+                                    <div class="list-group-item border-0">
+                                        <p class="mb-1 small fw-bold">System maintenance on Sunday</p>
+                                        <span class="text-muted smaller">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Result Upload Section (Hidden by default) -->
+                <div id="section-upload" class="content-section d-none">
+                    <div class="row g-4">
+                        <!-- Result Upload Form -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card border-0 shadow-sm custom-card">
+                                <div class="card-header bg-white border-bottom py-3">
+                                    <h5 class="mb-0 fw-bold"><i class="fas fa-plus-circle text-primary me-2"></i> Upload
+                                        New Result</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form id="resultForm">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Class / Section</label>
+                                            <select class="form-select" id="className" required>
+                                                <option value="" disabled selected>Select Class</option>
+                                                <option>Class 9-A</option>
+                                                <option>Class 10-B</option>
+                                                <option>ICS-Part 1</option>
+                                                <option>BSCS 4th</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Subject</label>
+                                            <select class="form-select" id="subject" required>
+                                                <option value="" disabled selected>Select Subject</option>
+                                                <option>Computer Science</option>
+                                                <option>Mathematics</option>
+                                                <option>Physics</option>
+                                                <option>English</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Semester / Term</label>
+                                            <select class="form-select" id="term" required>
+                                                <option value="" disabled selected>Select Term</option>
+                                                <option>Mid Term</option>
+                                                <option>Final Term</option>
+                                                <option>Quiz 1</option>
+                                            </select>
+                                        </div>
+                                        <hr class="my-3">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Student Roll No</label>
+                                            <input type="text" class="form-control" id="rollNo" placeholder="e.g. 1025"
+                                                required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-medium">Student Name</label>
+                                            <input type="text" class="form-control" id="studentName"
+                                                placeholder="Enter Full Name" required>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-medium">Marks Obtained</label>
+                                                <input type="number" class="form-control" id="marksObtained"
+                                                    placeholder="00" required>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label class="form-label fw-medium">Total Marks</label>
+                                                <input type="number" class="form-control" id="totalMarks"
+                                                    placeholder="100" required>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div id="gradeDisplay"
+                                                class="alert alert-light border text-center fw-bold py-2 mb-0">
+                                                Grade: -- | Status: --
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold shadow-sm">
+                                            <i class="fas fa-cloud-upload-alt me-2"></i> Upload Result
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Bulk Upload Card -->
+                            <div class="card border-0 shadow-sm mt-4 custom-card">
+                                <div class="card-header bg-white border-bottom py-3">
+                                    <h5 class="mb-0 fw-bold"><i class="fas fa-file-csv text-success me-2"></i> Bulk
+                                        Upload</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="text-muted small">Upload marks for the entire class using a CSV/Excel
+                                        file.</p>
+                                    <div class="upload-area border border-2 border-dashed rounded text-center p-4 mb-3"
+                                        id="dropZone">
+                                        <i class="fas fa-file-excel fa-2x text-muted mb-2"></i>
+                                        <p class="mb-0 small">Drag & drop files or <span
+                                                class="text-primary cursor-pointer">Browse</span></p>
+                                        <input type="file" id="bulkFile" class="d-none" accept=".csv, .xlsx">
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="text-decoration-none small"><i
+                                                class="fas fa-download me-1"></i> Sample file</a>
+                                        <button class="btn btn-outline-success btn-sm px-4">Process File</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Uploaded Results Table -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card border-0 shadow-sm custom-card h-100">
+                                <div
+                                    class="card-header bg-white border-bottom py-3 d-flex flex-wrap justify-content-between align-items-center">
+                                    <h5 class="mb-0 fw-bold"><i class="fas fa-list text-secondary me-2"></i> Recent
+                                        Records</h5>
+                                    <div class="d-flex gap-2 mt-2 mt-sm-0">
+                                        <div class="input-group input-group-sm" style="width: 250px;">
+                                            <span class="input-group-text bg-light border-end-0"><i
+                                                    class="fas fa-search text-muted"></i></span>
+                                            <input type="text" class="form-control bg-light border-start-0"
+                                                id="tableSearch" placeholder="Search by name or ID...">
+                                        </div>
+                                        <button class="btn btn-sm btn-outline-secondary"><i
+                                                class="fas fa-filter"></i></button>
+                                    </div>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover align-middle mb-0" id="resultsTable">
+                                            <thead class="bg-light text-muted small text-uppercase">
+                                                <tr>
+                                                    <th class="ps-4">Roll No</th>
+                                                    <th>Name</th>
+                                                    <th>Subject</th>
+                                                    <th>Marks</th>
+                                                    <th>Grade</th>
+                                                    <th>Status</th>
+                                                    <th class="text-end pe-4">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="resultsList">
+                                                <!-- Dynamic Content -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card-footer bg-white border-top py-3 d-flex justify-content-between align-items-center px-4">
+                                    <span class="text-muted small">Showing <span id="recordCount">0</span>
+                                        records</span>
+                                    <nav>
+                                        <ul class="pagination pagination-sm mb-0">
+                                            <li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Students Section -->
+                <div id="section-students" class="content-section d-none">
+                    <div class="card border-0 shadow-sm custom-card">
+                        <div
+                            class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0 fw-bold"><i class="fas fa-user-graduate text-primary me-2"></i> Student
+                                Registry</h5>
+                            <button class="btn btn-primary btn-sm"><i class="fas fa-plus me-1"></i> Add Student</button>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle mb-0">
+                                    <thead class="bg-light text-muted small text-uppercase">
+                                        <tr>
+                                            <th class="ps-4">ID</th>
+                                            <th>Name</th>
+                                            <th>Class</th>
+                                            <th>Email</th>
+                                            <th>Parent Contact</th>
+                                            <th class="text-end pe-4">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="ps-4">1021</td>
+                                            <td>Zohaib Khan</td>
+                                            <td>ICS-Part 1</td>
+                                            <td>zohaib@example.com</td>
+                                            <td>+92 300 1234567</td>
+                                            <td class="text-end pe-4">
+                                                <button class="btn btn-sm btn-light text-primary"><i
+                                                        class="fas fa-eye"></i></button>
+                                                <button class="btn btn-sm btn-light text-danger"><i
+                                                        class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ps-4">1022</td>
+                                            <td>Sara Ahmed</td>
+                                            <td>Class 10-B</td>
+                                            <td>sara@example.com</td>
+                                            <td>+92 300 7654321</td>
+                                            <td class="text-end pe-4">
+                                                <button class="btn btn-sm btn-light text-primary"><i
+                                                        class="fas fa-eye"></i></button>
+                                                <button class="btn btn-sm btn-light text-danger"><i
+                                                        class="fas fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subjects Section -->
+                <div id="section-subjects" class="content-section d-none">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm custom-card h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3">
+                                        <i
+                                            class="fas fa-laptop-code fa-3x text-primary p-3 bg-light rounded-circle"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Computer Science</h5>
+                                    <p class="text-muted small">Course Code: CS-101</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <span class="badge bg-soft-primary text-primary border border-primary">60
+                                            Students</span>
+                                        <span
+                                            class="badge bg-soft-success text-success border border-success">Active</span>
+                                    </div>
+                                    <hr>
+                                    <button class="btn btn-outline-primary btn-sm w-100">View Curriculum</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm custom-card h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3">
+                                        <i
+                                            class="fas fa-square-root-alt fa-3x text-success p-3 bg-light rounded-circle"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Mathematics</h5>
+                                    <p class="text-muted small">Course Code: MATH-202</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <span class="badge bg-soft-primary text-primary border border-primary">45
+                                            Students</span>
+                                        <span
+                                            class="badge bg-soft-success text-success border border-success">Active</span>
+                                    </div>
+                                    <hr>
+                                    <button class="btn btn-outline-success btn-sm w-100">View Curriculum</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm custom-card h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="mb-3">
+                                        <i class="fas fa-atom fa-3x text-info p-3 bg-light rounded-circle"></i>
+                                    </div>
+                                    <h5 class="fw-bold">Physics</h5>
+                                    <p class="text-muted small">Course Code: PHY-303</p>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <span class="badge bg-soft-primary text-primary border border-primary">38
+                                            Students</span>
+                                        <span
+                                            class="badge bg-soft-success text-success border border-success">Active</span>
+                                    </div>
+                                    <hr>
+                                    <button class="btn btn-outline-info btn-sm w-100">View Curriculum</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="section-settings" class="content-section d-none">
+                    <div class="row g-4">
+                        <div class="col-lg-8">
+                            <div class="card border-0 shadow-sm custom-card">
+                                <div class="card-header bg-white py-3">
+                                    <h5 class="mb-0 fw-bold">Profile Settings</h5>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <label class="form-label small fw-bold">Full Name</label>
+                                                <input type="text" class="form-control" value="Prof. Ahmed">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small fw-bold">Email Address</label>
+                                                <input type="email" class="form-control" value="ahmed@edu-manage.com">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small fw-bold">Department</label>
+                                                <input type="text" class="form-control" value="Computer Science">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label small fw-bold">Phone Number</label>
+                                                <input type="text" class="form-control" value="+92 300 0000000">
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-bold mb-3">Notification Preferences</h6>
+                                        <div class="form-check form-switch mb-2">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label small">Email notification for new
+                                                results</label>
+                                        </div>
+                                        <div class="form-check form-switch mb-3">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                            <label class="form-check-label small">Weekly performance reports</label>
+                                        </div>
+                                        <button class="btn btn-primary px-4">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card border-0 shadow-sm custom-card bg-dark text-white">
+                                <div class="card-body p-4 text-center">
+                                    <img src="https://ui-avatars.com/api/?name=Teacher+Admin&background=0D6EFD&color=fff&size=128"
+                                        alt="Profile" class="rounded-circle mb-3 border border-3 border-primary p-1">
+                                    <h5 class="fw-bold">Prof. Ahmed</h5>
+                                    <p class="text-muted small">Senior Faculty Member</p>
+                                    <button class="btn btn-outline-light btn-sm w-100 mb-2">Change Avatar</button>
+                                    <button class="btn btn-outline-danger btn-sm w-100">Update Password</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast border-0 shadow" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastMessage">
+                    <!-- Message here -->
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
